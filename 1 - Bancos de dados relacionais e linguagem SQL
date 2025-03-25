@@ -3,15 +3,15 @@ UNIDADE 1 - FUNDAMENTOS DE BANCOS DE DADOS
 
 **~Modelos de dados~**
 - Modelo de dado de alto nível **conceitual**
-    Nível de abstração mais alto, mais próximo da linguagem de negócio e do dia a dia.
+Nível de abstração mais alto, mais próximo da linguagem de negócio e do dia a dia.
 - Modelo de dados representacionais ou de implementação ou **lógicos**
-    Descreve alguns detalhes tecnicos da implementação, mas ainda assim não é a linguagem técnica e de implementação final dos dados.
+Descreve alguns detalhes tecnicos da implementação, mas ainda assim não é a linguagem técnica e de implementação final dos dados.
 - Modelo de dados de baixo nível ou **físicos**
 Tem todos os detalhes técnicos necessários para implementação, inclusive a escolha do SGBD e detalhamento de campos da estrutura das tabelas.
 
 ~**Tipos de termos SQL**~
 * DDL (Data Definition Language) 
-	Cria e modifica a estrutura do banco (criação de tabelas, schemas e etc).
+Cria e modifica a estrutura do banco (criação de tabelas, schemas e etc).
 *CREATE, DROP, ALTER, RENAME, TRUNCATE*
 * DML (Data Manipulation Language)
 Incluir, alterar e consultar dados do banco, como inclusão de dados em uma tabela que foi criada previamente com os termos DDL.
@@ -20,8 +20,41 @@ Incluir, alterar e consultar dados do banco, como inclusão de dados em uma tabe
 Definições de segurança do banco. Os comandos DCL são usados para gerenciar as permissões e a segurança de um banco de dados.
 *GRANT, REVOKE, DENY*
 
+1.3 - Tipos de Dados
 ~**Tipos de Dados**~
-bit          | Número inteiro que pode ser 0, 1 ou NULL | 0 bytes (pois é 1 bit)
-tinyint    | Permite números inteiros de 0 a 255            | 1 byte (8 bits)
+bit | Número inteiro que pode ser 0, 1 ou NULL | 0 bytes (1 bit)
+tinyint | Permite números inteiros de 0 a 255 | 1 byte (8 bits)
 smallint | Permite números inteiros entre -32.768 e 32.767 | 2 bytes (16 bits)
-int          |
+int | Permite números inteiros entre -2.147.483.647 e 2.147.483.647 | 4 bytes (32 bits)
+bigint | Permite números inteiros entre -9.223.372.036.854.775.808 e 9.223.372.036.854.775.807 | 8 bytes (64 bits)
+
+~**Tipos de Dados: Numérico**~
+decimal(p,s) | Precisão de número flutuante e número de escala -10^38+1 a 10^38-1 | 5-17 bytes (136 bits)
+numeric(p,s) | Precisão de número flutuante e número de escala -10^38+1 a 10^38-1 | 5-17 bytes (136 bits)
+Obs.: Ambos os valores numéricos acima têm os parametros p e s que indicam respectivamente o número máximo de digitos a esquerda e a diretia do ponto decimal, onde p deve ser um valor de 1 a 38, sendo o padrão 18, e s sendo um valor de 0 a p, sendo o padrão 0.
+
+real | Precisão de número flutuante de -3.40E+38 a 3.40E+38 | 4 bytes (32 bits)
+float(n) | Precisão de número flutuante de -1.79E+308 a 1.79E+308. O parâmetro n indica se o campo deve conter 4 ou 8 bytes | 4 ou 8 bytes (32 ou 64 bits)
+money | Tipo de "moeda" de -922.337.203.685.477, 5808 a 922.337.203.685.477,5807 | 8 bytes (64 bits)
+
+~**Tipos de Dados: Texto**~
+char(n) | Tamanho fixo, completado com espaços em branco | 8.000 caracteres | Tamanho de bytes definidos no parametro N
+varchar(n) | Tamanho variável com limite | 8.000 caracteres | mínimo de 2 bytes (16 bits)  + número de caracteres definidos em N
+varchar(max) | Tamanho variável com limite | 1.073.741.824 caracteres | mínimo de 2 bytes (16 bits)  + número de caracteres definidos em N
+text | Tamanho variável | 2GB de dados (texto) | mínimo de 4 bytes (32 bits) + número de caracteres escritos
+
+~**Tipos de Dados: Data e hora**~
+date | Armazena apenas uma data. De 1 de janeiro de 00001 a 31 de dezembro de 9999 | 3 bytes (24 bits)
+time | Armazena um tempo com precisão de 100 nanosegundos | 3-5 bytes (40 bits)
+datetime | Armazena data e hora de 1 de janeiro de 1753 a 31 de dezembro de 9999 com uma precisão de 3,33 milisegundos | 8 bytes (64 bits)
+datetime2 | Armazena data e hora de 1 de janeiro de 00001 a 31 de dezembro de 9999 com precisão de 100 nanosegundos | 6-8 bytes (64 bits)
+smalldatetime | Armazena data e hora de 1 de janeiro de 1900 a 6 de junho de 2079 com precisão de 1 minuto | 4 bytes (32 bits)
+
+~**Tipos de Dados: Outros**~
+uniqueidentifier | Armazena um identificador globalmente exclusivo (GUID)
+
+1.4 - Linguagem SQL
+
+
+
+
