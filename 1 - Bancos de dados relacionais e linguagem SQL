@@ -1,0 +1,27 @@
+UNIDADE 1 - FUNDAMENTOS DE BANCOS DE DADOS
+1.2 - Conceitos de Bancos de Dados
+
+**~Modelos de dados~**
+- Modelo de dado de alto nível **conceitual**
+    Nível de abstração mais alto, mais próximo da linguagem de negócio e do dia a dia.
+- Modelo de dados representacionais ou de implementação ou **lógicos**
+    Descreve alguns detalhes tecnicos da implementação, mas ainda assim não é a linguagem técnica e de implementação final dos dados.
+- Modelo de dados de baixo nível ou **físicos**
+Tem todos os detalhes técnicos necessários para implementação, inclusive a escolha do SGBD e detalhamento de campos da estrutura das tabelas.
+
+~**Tipos de termos SQL**~
+* DDL (Data Definition Language) 
+	Cria e modifica a estrutura do banco (criação de tabelas, schemas e etc).
+*CREATE, DROP, ALTER, RENAME, TRUNCATE*
+* DML (Data Manipulation Language)
+Incluir, alterar e consultar dados do banco, como inclusão de dados em uma tabela que foi criada previamente com os termos DDL.
+*SELECT, INSERT, DELETE, UPDATE*
+* DCL (Data Control Language)
+Definições de segurança do banco. Os comandos DCL são usados para gerenciar as permissões e a segurança de um banco de dados.
+*GRANT, REVOKE, DENY*
+
+~**Tipos de Dados**~
+bit          | Número inteiro que pode ser 0, 1 ou NULL | 0 bytes (pois é 1 bit)
+tinyint    | Permite números inteiros de 0 a 255            | 1 byte (8 bits)
+smallint | Permite números inteiros entre -32.768 e 32.767 | 2 bytes (16 bits)
+int          |
